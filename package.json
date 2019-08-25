@@ -1,6 +1,6 @@
 {
   "name": "ogimage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Open Graph Image as a Service",
   "main": "index.mjs",
   "scripts": {
