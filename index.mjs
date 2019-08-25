@@ -4,6 +4,10 @@ import { getScreenshot } from './lib/chromium.mjs'
 import { getHtml } from './lib/template.mjs'
 import { writeTempFile, pathToFileURL } from './lib/file.mjs'
 
+const {
+  PORT = 4000
+} = process.env
+
 const app = express()
 
 async function handler(req, res) {
@@ -30,6 +34,6 @@ app.get('*', async(req, res) =>
   res.status(200).send(await handler(req, res))
 )
 
-app.listen(3000)
+app.listen(PORT => console.log(`server started at *:${PORT}`))
 
 export default app
