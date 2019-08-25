@@ -5,7 +5,7 @@ import { getHtml } from './lib/template.mjs'
 import { writeTempFile, pathToFileURL } from './lib/file.mjs'
 
 const {
-  PORT = 4000
+  PORT = 3000
 } = process.env
 
 const app = express()
@@ -34,6 +34,6 @@ app.get('*', async(req, res) =>
   res.status(200).send(await handler(req, res))
 )
 
-app.listen(PORT => console.log(`server started at *:${PORT}`))
+app.listen(PORT, () => console.log(`server started at *:${PORT}`))
 
 export default app
