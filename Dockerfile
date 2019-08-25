@@ -6,7 +6,7 @@ ENV CHROMIUM_PATH /usr/bin/chromium-browser
 
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm install --production
+RUN npm ci --production
 
 COPY . .
 
