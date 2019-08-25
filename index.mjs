@@ -26,7 +26,7 @@ async function handler(req, res) {
   }
 }
 
-app.get('/', async(req, res) =>
+app.get('*', async(req, res) =>
   res.status(200).send(await handler(req, res))
 )
 
