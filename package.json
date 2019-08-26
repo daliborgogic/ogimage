@@ -8,9 +8,15 @@
     "start": "node --experimental-modules index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "open-graph",
+    "image",
+    "generator",
+    "image-generator",
+    "twitter-cards"
+  ],
+  "author": "Dalibor Gogic <mail@daliborgogic.com> (https://daliborgogic.com)",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "helmet": "^3.20.0",
