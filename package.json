@@ -4,7 +4,7 @@
   "description": "Open Graph Image as a Service",
   "main": "index.mjs",
   "scripts": {
-    "dev": "HTML_DEBUG=1 NODE_ENV=development node --experimental-modules index.mjs",
+    "dev": "HTML_DEBUG=0 NODE_ENV=development node --experimental-modules index.mjs",
     "start": "node --experimental-modules index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,6 @@
     "express": "^4.17.1",
     "marked": "^0.7.0",
     "puppeteer": "^1.19.0",
-    "puppeteer-core": "^1.19.0",
     "twemoji": "^12.1.2"
   }
 }
