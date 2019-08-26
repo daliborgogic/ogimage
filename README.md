@@ -11,14 +11,14 @@
 </head>
 ```
 
-| Query     | Description |
+| Query     | Description                                                           |
 |:----------|:----------------------------------------------------------------------|
-|`md`       | `integer || boolean` Use Markdown. Options: `O || 1`. Deafult is `1`. |
-| `theme`   | `string` Switch Theme. Options: `light || dark`. Default is `light`.  |
+|`md`       | `integer` Use Markdown. Value: `O` or `1`. Deafult is `1`.            |
+|`theme`    | `string` Switch Theme. Value: `light` or `dark`. Default is `light`.  |
 |`fontSize` | `string` Text font size. Default `96px`.                              |
 |`images`   | `string` Add image.                                                   |
 |`width`    | `integer` Image width.                                                |
-|`height`   | `integer` height.                                                     |
+|`height`   | `integer` Image height.                                               |
 |`slice`    | `integer` If api is in subfolder. (count string length).              |
 
 ### Usage
