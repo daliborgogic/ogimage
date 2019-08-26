@@ -4,20 +4,24 @@ import { getScreenshot } from './lib/chromium.mjs'
 import { getHtml } from './lib/template.mjs'
 import { writeTempFile, pathToFileURL } from './lib/file.mjs'
 
-const {
-  PORT = 3000
-} = process.env
-
+const { PORT = 3000 } = process.env
+const isDev = process.env.NODE_ENV === 'development'
+const isHtmlDebug = process.env.HTML_DEBUG === '1'
 const app = express()
 
 async function handler(req, res) {
   try {
     const parsedReq = parseRequest(req)
     const html = getHtml(parsedReq)
+    if (isHtmlDebug) {
+      res.setHeader('Content-Type', 'text/html')
+      res.end(html)
+      return
+    }
     const { text, fileType } = parsedReq
     const filePath = await writeTempFile(text, html)
     const fileUrl = pathToFileURL(filePath);
-    const file = await getScreenshot(fileUrl, fileType)
+    const file = await getScreenshot(fileUrl, fileType, isDev)
     res.statusCode = 200;
     res.setHeader('Content-Type', `image/${fileType}`)
     res.setHeader('Cache-Control', `public, immutable, no-transform, s-maxage=31536000, max-age=31536000`)

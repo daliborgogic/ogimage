@@ -4,6 +4,7 @@
   "description": "Open Graph Image as a Service",
   "main": "index.mjs",
   "scripts": {
+    "dev": "HTML_DEBUG=1 NODE_ENV=development node --experimental-modules index.mjs",
     "start": "node --experimental-modules index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
