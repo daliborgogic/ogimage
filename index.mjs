@@ -1,4 +1,5 @@
 import express from 'express'
+import helmet from 'helmet'
 import { parseRequest } from './lib/parser.mjs'
 import { getScreenshot } from './lib/chromium.mjs'
 import { getHtml } from './lib/template.mjs'
@@ -8,6 +9,9 @@ const { PORT = 3000 } = process.env
 const isDev = process.env.NODE_ENV === 'development'
 const isHtmlDebug = process.env.HTML_DEBUG === '1'
 const app = express()
+
+app.use(helmet())
+app.disable('x-powered-by')
 
 async function handler(req, res) {
   try {
